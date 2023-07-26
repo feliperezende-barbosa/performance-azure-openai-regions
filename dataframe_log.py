@@ -50,5 +50,4 @@ histg = px.histogram(df,
                     
 histg.show()        
 
-
 print(df.query('Status == "SUCCESS"')['Response_openai_s'].groupby(df['Region']).describe())
