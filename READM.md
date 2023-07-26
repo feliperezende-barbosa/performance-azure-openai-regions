@@ -1,0 +1,1 @@
+Performance Azure OpenAI Regions
