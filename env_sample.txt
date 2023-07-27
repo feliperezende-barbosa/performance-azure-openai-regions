@@ -1,0 +1,29 @@
+#Instructions
+#Rename this file to ".env" and update the following parameters according to the regions you want to test.
+#Remove this header and save the file, ensuring it's placed in the root directory of your code
+
+AZURE_OPENAI_REGIONS='{
+    "eastus": {
+        "DEPLOYMENT_NAME": "{MODEL_NAME}",
+        "ENDPOINT": "https://{YOUR_ENDPOINT}.openai.azure.com/",
+        "API_KEY": "{YOUR_API_KEY}"
+        }, 
+    "southcentralus": {
+        "DEPLOYMENT_NAME": "{MODEL_NAME}",
+        "ENDPOINT": "https://{YOUR_ENDPOINT}.openai.azure.com/",
+        "API_KEY": "{YOUR_API_KEY}"
+        },
+    "francecentral": {
+        "DEPLOYMENT_NAME": "{MODEL_NAME}",
+        "ENDPOINT": "https://{YOUR_ENDPOINT}.openai.azure.com/",
+        "API_KEY": "{YOUR_API_KEY}"
+        }
+    }'
+
+API_VERSION='2023-03-15-preview'
+
+AZURE_OPENAI_MAXTOKENS=250
+
+AZURE_OPENAI_TEMPERATURE=0.7
+
+AZURE_OPENAI_TIMEOUT=180
