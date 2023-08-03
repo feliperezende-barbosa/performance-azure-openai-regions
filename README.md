@@ -29,7 +29,7 @@ You can generate some graphs from the logs in order to compare the performance o
   ![Histogram graph](./images/histogram_requests.png)
 
 * Statistics
-  * Example of a Statistics:
+
   ![Statistics](./images/statistics.png)
 
 #### To Generate Graphs
@@ -37,4 +37,4 @@ You can generate some graphs from the logs in order to compare the performance o
 * Run code
   * **Important**: *dataframe_log.py* is the code to run.
 
-  >NOTE: Need to specify the path of the log file in the code.
+>NOTE: Need to specify the path of the log file in the code.
