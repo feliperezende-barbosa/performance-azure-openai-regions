@@ -2,7 +2,13 @@ import plotly.express as px
 import pandas as pd
 import statsmodels.api
 
-df = pd.read_csv('./Logs/25-07-2023 21-09-42.log', 
+# This file contains code to read a log file and create scatter and histogram plots using plotly.express library. 
+# The scatter plot shows the relationship between the completion size and the request duration for each region. 
+# The histogram plots show the request duration and success/error count for each region. 
+# The log file is read using pandas library and the plots are created using plotly.express library.
+
+#variable to read the log file and its columns
+df = pd.read_csv('./Logs/27-07-2023 14-40-35.log', 
                  delimiter=';', 
                  names = ['Status', 
                           'Region', 
@@ -17,6 +23,7 @@ df = pd.read_csv('./Logs/25-07-2023 21-09-42.log',
 
 df.head()
 
+#variable to create a scatter graph
 scat = px.scatter(df, 
                  x='Completion Size', 
                  y='Response_openai_s', 
@@ -26,18 +33,21 @@ scat = px.scatter(df,
                  title='OpenAI Completion Size vs Request Duration (s)', 
                  labels={'Completion Size':'Completion Size (tokens)', 'Response_openai_s':'Request Duration (s)'}
                  )
-
+#plot the scatter
 scat.show()
 
-histg1 = px.histogram(df, 
+#variable to create a histogram graph
+histg_avg = px.histogram(df, 
                     x='Region', 
                     y='Response_openai_s', 
                     color='Status', 
                     barmode='group', 
                     histfunc='avg', 
                     title='OpenAI Request Duration (s) by Region',
+                    labels={'Response_openai_s':'Request Duration (s)'},
                     text_auto=True)
-histg1.show()
+#Plot the histogram
+histg_avg.show()
 
 histg = px.histogram(df, 
                     x='Region', 
@@ -50,4 +60,5 @@ histg = px.histogram(df,
                     
 histg.show()        
 
+#print the statistics of the dataframe
 print(df.query('Status == "SUCCESS"')['Response_openai_s'].groupby(df['Region']).describe())
