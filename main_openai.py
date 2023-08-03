@@ -16,7 +16,7 @@ regions = json.loads(az_openai_regions)
 
 
 #Number of runs to be executed. Adjust according to your needs
-RUNS = 2
+RUNS = 5
 
 #Define a default system message. You can adjust this message to your needs depending on the test type
 system_message = {"role":"system","content":"You are an AI assistant that helps people find information."}
@@ -41,7 +41,7 @@ now = time.strftime("%d-%m-%Y %H-%M-%S")
 log_file = now + ".log"
 
 #Init the parameters of the log file to generate a csv file (; separator)
-logging.basicConfig(level=logging.INFO, filename=f"./{log_file}", filemode='a', format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
+logging.basicConfig(level=logging.INFO, filename=f"./Logs/{log_file}", filemode='a', format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
 logging.info(f";Status;Region;Sample;Response_openai_s;Request_Duration_s;Prompt Size;Completion Size")
 
 #Loop to execute the number of runs desired
