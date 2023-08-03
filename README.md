@@ -29,6 +29,7 @@ You can generate some graphs from the logs in order to compare the performance o
   ![Histogram graph](./images/histogram_requests.png)
 
 * Statistics
+
   ![Statistics](./images/statistics.png)
 
 #### To Generate Graphs
